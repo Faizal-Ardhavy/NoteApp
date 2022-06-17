@@ -3,7 +3,8 @@ $conn = mysqli_connect('localhost','root','','catatan');
 if (isset($_POST["submit"])) {
     $nama = $_POST["judul"];
     $isi = $_POST["isi"];
-    $query = "INSERT INTO note VALUES ('','$nama','$isi')";
+    $waktu = $_POST["waktu"];
+    $query = "INSERT INTO note VALUES ('','$nama','$isi','$waktu')";
     mysqli_query($conn, $query);
 }
 ?>
@@ -12,9 +13,9 @@ if (isset($_POST["submit"])) {
 <html>
    <head>
       <title>Redirect</title>
-      <meta http-equiv = "refresh" content = "1; url =index.php" />
+      <meta http-equiv = "refresh" content = "0.25; url =index.php" />
    </head>
    <body>
-      <p><?="Berhasil menginput data"?></p>
+      <p><?="Berhasil menginput catatan"?></p>
    </body>
 </html>

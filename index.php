@@ -20,18 +20,23 @@ $data = mysqli_query($conn, $query);
         <div class="notes" id="app">
             <div class="notes__sidebar">
                 <input class="notes__add" onclick="return confirm('Apakah Ingin Menambahkan pesanan ini ?')"
-            type="submit" value="Add Note" name = "submit"\>
-                <div class="notes__list">
-                    <div class="notes__list-item notes__list-item--selected">
-                        <div class="notes__small-title">Lecture Notes</div>
-                        <div class="notes__small-body">I learnt nothing today.</div>
-                        <div class="notes__small-updated">Thursday 3:30pm</div>
+                type="submit" value="Add Note" name = "submit"\>
+            <?php foreach($data as $d){ ?>
+                    <div class="notes__list">
+                        <div class="notes__list-item notes__list-item--selected">
+                            <div class="notes__small-title"><?= $d["judul"] ?></div>
+                            <div class="notes__small-body"><?= $d["isi"] ?></div>
+                            <div class="notes__small-updated"><?= $d["waktu"] ?></div>
+                            <a href="hapus.php?id=<?= $d['id'] ?>" class="btn btn btn-outline-danger"> Hapus</a>
+                        </div>
                     </div>
-                </div>
+            <?php } ?>
             </div>
                 <div class="notes__preview">
                     <input class="notes__title" name="judul" type="text" placeholder="Enter a title..." required autocomplete="off" autofocus>
                     <textarea class="notes__body" name="isi" placeholder="Enter text..." required autocomplete="off" autofocus></textarea>
+                    <label for="birthday">Tanggal: </label>
+                    <input type="date" id="waktu" name="waktu"  required autocomplete="off" autofocus>
                 </div>
         </div>
     </form>
