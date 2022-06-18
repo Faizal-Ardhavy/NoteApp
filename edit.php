@@ -1,10 +1,10 @@
 <?php
+$id = $_GET['id'];
 $conn = mysqli_connect('localhost','root','','catatan');
 
 $query = "SELECT * FROM note";
 $data = mysqli_query($conn, $query);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,8 @@ $data = mysqli_query($conn, $query);
             <?php } ?>
             </div>
                 <div class="notes__preview">
-                    <input class="notes__title" name="judul" type="text" placeholder="Enter a title..." required autocomplete="off" autofocus>
-                    <textarea class="notes__body" name="isi" placeholder="Enter text..." required autocomplete="off" autofocus></textarea>
+                    <input class="notes__title" name="judul" type="text" value=<?= $d["judul"] ?> placeholder="Enter a title..." required autocomplete="off" autofocus>
+                    <textarea class="notes__body" name="isi" value=<?= $d["isi"] ?> placeholder="Enter text..." required autocomplete="off" autofocus></textarea>
                 </div>
         </div>
     </form>

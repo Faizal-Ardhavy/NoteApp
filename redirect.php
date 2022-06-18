@@ -1,9 +1,9 @@
 <?php
 $conn = mysqli_connect('localhost','root','','catatan');
 if (isset($_POST["submit"])) {
+    $waktu = date('Y-m-d');
     $nama = $_POST["judul"];
     $isi = $_POST["isi"];
-    $waktu = $_POST["waktu"];
     $query = "INSERT INTO note VALUES ('','$nama','$isi','$waktu')";
     mysqli_query($conn, $query);
 }
