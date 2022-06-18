@@ -26,12 +26,11 @@ $dataValue = mysqli_fetch_assoc($dataValue);
                 <input class="notes__add" onclick="return confirm('Apakah Ingin Menambahkan pesanan ini ?')"
                 type="submit" value="Add Note" name = "submit"\>
             <?php foreach($data as $d){ ?>
-                    <div class="notes__list">
-                        <div class="notes__list-item notes__list-item--selected">
+                    <div class="notes__list" onclick="window.location='edit.php?id=<?= $d['id'] ?>';">
+                        <div class="notes__list-item notes__list-item--selected" >
                             <div class="notes__small-title"><?= $d["judul"] ?></div>
                             <div class="notes__small-body"><?= $d["isi"] ?></div>
                             <div class="notes__small-updated"><?= $d["waktu"] ?></div>
-                            <a href="edit.php?id=<?= $d['id']?>" class="btn btn btn-outline-success"> Edit</a>
                             <a href="hapus.php?id=<?= $d['id'] ?>" class="btn btn btn-outline-danger"> Hapus</a>
                         </div>
                     </div>
