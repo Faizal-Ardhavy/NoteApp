@@ -16,7 +16,4 @@ if (isset($_POST["submit"])) {
       <title>Redirect</title>
       <meta http-equiv = "refresh" content = "0.25; url =index.php" />
    </head>
-   <body>
-      <p><?="Berhasil menginput catatan"?></p>
-   </body>
 </html>

@@ -15,7 +15,4 @@ mysqli_query($conn, $query);
       <title>Kelola Data</title>
       <meta http-equiv = "refresh" content = "0.01; url =index.php" />
    </head>
-   <body>
-      <p>Berhasil Mengelola data</p>
-   </body>
 </html>

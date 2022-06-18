@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+:root {
+    --clr-tosca: #5EA3A3;
+    --clr-light-tosca: #77bbbb;
+    --clr-lighter-tosca: #ADD2C9;
+}
+
 html,
 body {
-    height: 100%;
+    font-family: 'Mukta', sans-serif;
+    height: 100vh;
     margin: 0;
 }
 
@@ -15,14 +23,13 @@ body {
 
 .notes__sidebar {
     border-right: 2px solid #dddddd;
-    flex-shrink: 0;
-    overflow-y: auto;
     padding: 1em;
     width: 300px;
+    height: 100vh;
 }
 
-.notes__add {
-    background: #009578;
+.notes__new {
+    background: var(--clr-tosca);
     border: none;
     border-radius: 7px;
     color: #ffffff;
@@ -32,10 +39,37 @@ body {
     margin-bottom: 1em;
     padding: 0.75em 0;
     width: 100%;
+    transition: 0.25s;
+}
+
+.notes__new:hover {
+    background: var(--clr-light-tosca);
+}
+
+.notes__add {
+    background: var(--clr-tosca);
+    border: none;
+    border-radius: 100%;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1.5em;
+    width: fit-content;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    transition: 0.25s;
 }
 
 .notes__add:hover {
-    background: #01af8c;
+    background: var(--clr-light-tosca);
+}
+
+.notes__list {
+    margin-bottom: 0.5em;
 }
 
 .notes__list-item {
@@ -43,25 +77,34 @@ body {
 }
 
 .notes__list-item--selected {
-    background: #eeeeee;
+    background: #f8f8f8;
     border-radius: 7px;
-    font-weight: bold;
 }
 
-.notes__small-title,
-.notes__small-updated {
-    padding: 10px;
+.notes__list-item--selected:hover {
+    background: #ebebeb;
 }
 
 .notes__small-title {
+    padding: 10px 14px;
+    font-weight: bold;
     font-size: 1.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .notes__small-body {
-    padding: 0 10px;
+    padding: 0 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .notes__small-updated {
+    padding: 10px 0;
+}
+
+.notes__small-updated,
+.btn-del {
     color: #aaaaaa;
     font-style: italic;
     text-align: right;
@@ -82,7 +125,7 @@ body {
 }
 
 .notes__title {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -92,4 +135,18 @@ body {
     line-height: 1.5;
     margin-top: 1.5em;
     resize: none;
+}
+
+.btn-del {
+    font-size: large;
+    padding-right: 0.5em;
+    transition: 0.25s;
+}
+
+.btn-del:hover {
+    color: var(--clr-tosca);
+}
+
+.hstack {
+    margin-bottom: 1em;
 }
