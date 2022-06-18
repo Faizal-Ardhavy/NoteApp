@@ -6,6 +6,7 @@ $query = "SELECT * FROM note";
 $data = mysqli_query($conn, $query);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
