@@ -1,6 +1,5 @@
 <?php
 $conn = mysqli_connect('localhost','root','','catatan');
-
 $query = "SELECT * FROM note";
 $data = mysqli_query($conn, $query);
 ?>

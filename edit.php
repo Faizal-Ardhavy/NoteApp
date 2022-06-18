@@ -1,9 +1,11 @@
 <?php
 $id = $_GET['id'];
 $conn = mysqli_connect('localhost','root','','catatan');
-
 $query = "SELECT * FROM note";
+$queryValue = "SELECT * FROM note where id = $id";
 $data = mysqli_query($conn, $query);
+$dataValue = mysqli_query($conn, $queryValue);
+$dataValue = mysqli_fetch_assoc($dataValue);
 ?>
 
 
@@ -17,8 +19,9 @@ $data = mysqli_query($conn, $query);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="redirect.php" method="POST">
+    <form action="update.php" method="POST">
         <div class="notes" id="app">
+        <input type="hidden" name="id" value="<?= $id?>">
             <div class="notes__sidebar">
                 <input class="notes__add" onclick="return confirm('Apakah Ingin Menambahkan pesanan ini ?')"
                 type="submit" value="Add Note" name = "submit"\>
@@ -35,8 +38,8 @@ $data = mysqli_query($conn, $query);
             <?php } ?>
             </div>
                 <div class="notes__preview">
-                    <input class="notes__title" name="judul" type="text" value=<?= $d["judul"] ?> placeholder="Enter a title..." required autocomplete="off" autofocus>
-                    <textarea class="notes__body" name="isi" value=<?= $d["isi"] ?> placeholder="Enter text..." required autocomplete="off" autofocus></textarea>
+                    <input class="notes__title" name="judul" type="text" value="<?= $dataValue["judul"] ?>" placeholder="Enter a title..." required autocomplete="off" autofocus>
+                    <textarea class="notes__body" name="isi" placeholder="Enter text..." required autocomplete="off" autofocus><?= $dataValue["isi"] ?></textarea>
                 </div>
         </div>
     </form>
