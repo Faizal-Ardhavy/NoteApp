@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','catatan');
+$conn = mysqli_connect('sql109.epizy.com','epiz_31988867','srQpuAHcJp8y','epiz_31988867_catatan'); 
 
 //$_GET[id] untuk mengambil nilai dari address bar ?id=nilainya 
 $id = $_GET['id'];
