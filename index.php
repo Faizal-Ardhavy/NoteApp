@@ -1,5 +1,6 @@
 <?php
-$conn = mysqli_connect('localhost','root','','catatan');
+require './koneksi.php';
+
 $query = "SELECT * FROM note";
 $data = mysqli_query($conn, $query);
 

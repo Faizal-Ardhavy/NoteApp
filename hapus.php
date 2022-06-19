@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('localhost','root','','catatan');
+require './koneksi.php';
 
 //$_GET[id] untuk mengambil nilai dari address bar ?id=nilainya 
 $id = $_GET['id'];

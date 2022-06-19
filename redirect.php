@@ -1,5 +1,6 @@
 <?php
-$conn = mysqli_connect('localhost','root','','catatan');
+require './koneksi.php';
+
 if (isset($_POST["submit"])) {
     $waktu = date('Y-m-d');
     $nama = $_POST["judul"];
