@@ -30,7 +30,7 @@ function cut($text) {
 <body>
     <form action="redirect.php" method="POST">
         <div class="notes" id="app">
-            <div class="notes__sidebar">
+            <div class="notes__sidebar overflow-auto">
             <button class="notes__new" onclick="window.location= 'index.php'" type="button"><i class='bx bx-pencil'></i> New Note</button>
                 <?php foreach ($data as $d) { ?>
                     <div class="notes__list" onclick="window.location='edit.php?id=<?= $d['id'] ?>';">
