@@ -1,4 +1,3 @@
 <?php
-$conn = mysqli_connect('localhost','root','','inventori');
-
+    $conn = mysqli_connect('localhost', 'root', '', 'catatan');
 ?>
