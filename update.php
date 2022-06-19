@@ -12,7 +12,7 @@ mysqli_query($conn, $query);
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Kelola Data</title>
-      <meta http-equiv = "refresh" content = "0.01; url =index.php" />
+      <title>Updating</title>
+      <meta http-equiv = "refresh" content = "0.01; url =edit.php?id=<?= $id ?>" />
    </head>
 </html>

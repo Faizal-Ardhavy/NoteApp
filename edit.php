@@ -6,6 +6,14 @@ $queryValue = "SELECT * FROM note where id = $id";
 $data = mysqli_query($conn, $query);
 $dataValue = mysqli_query($conn, $queryValue);
 $dataValue = mysqli_fetch_assoc($dataValue);
+
+function cut($text) {
+    if(strlen($text) > 25){
+        return substr($text, 0, 25).'...';
+    }else{
+        return $text;
+    }
+}
 ?>
 
 
@@ -33,8 +41,8 @@ $dataValue = mysqli_fetch_assoc($dataValue);
                 <?php foreach ($data as $d) { ?>
                     <div class="notes__list" onclick="window.location='edit.php?id=<?= $d['id'] ?>';">
                         <div class="notes__list-item notes__list-item--selected">
-                            <div class="notes__small-title"><?= $d["judul"] ?></div>
-                            <div class="notes__small-body"><?= $d["isi"] ?></div>
+                            <div class="notes__small-title"><?= cut($d["judul"]) ?></div>
+                            <div class="notes__small-body"><?= cut($d["isi"]) ?></div>
                             <div class="notes__small-updated hstack gap-2">
                                 <div class="ms-auto"><?= $d["waktu"] ?></div>
                                 <div class="vr"></div>

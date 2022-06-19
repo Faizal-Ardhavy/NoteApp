@@ -14,6 +14,6 @@ if (isset($_POST["submit"])) {
 <html>
    <head>
       <title>Redirect</title>
-      <meta http-equiv = "refresh" content = "0.25; url =index.php" />
+      <meta http-equiv = "refresh" content = "0.01; url =index.php" />
    </head>
 </html>

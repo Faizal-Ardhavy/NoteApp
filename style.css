@@ -7,7 +7,6 @@
 
 html,
 body {
-    font-family: 'Mukta', sans-serif;
     height: 100vh;
     margin: 0;
 }
@@ -18,7 +17,7 @@ body {
 }
 
 .notes * {
-    font-family: sans-serif;
+    font-family: 'Mukta', sans-serif;
 }
 
 .notes__sidebar {
@@ -26,6 +25,7 @@ body {
     padding: 1em;
     width: 300px;
     height: 100vh;
+    overflow: scroll;
 }
 
 .notes__new {
@@ -145,8 +145,5 @@ body {
 
 .btn-del:hover {
     color: var(--clr-tosca);
-}
-
-.hstack {
-    margin-bottom: 1em;
+    font-size: larger;
 }
