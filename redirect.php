@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect('sql109.epizy.com','epiz_31988867','srQpuAHcJp8y','epiz_31988867_catatan');
+$conn = mysqli_connect('localhost','root','','catatan');
 if (isset($_POST["submit"])) {
     $waktu = date('Y-m-d');
     $nama = $_POST["judul"];
